@@ -1,0 +1,14 @@
+{
+    "testStatus": true,
+
+    "testString": "Hello World!",
+
+    "testArray": ["First", 2, {"third":4}],
+
+    "testDictionary":
+    {
+        "name": "Khan Solo",
+        "level": 200
+    }
+}
+

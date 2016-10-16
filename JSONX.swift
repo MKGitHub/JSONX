@@ -42,6 +42,9 @@ public class JSONX
     ///
     public convenience init?(with inString:String, usesSingleQuotes:Bool=false)
     {
+        // must have a string
+        guard (inString.characters.count > 0) else { return nil }
+
         var stringToUse:String = inString
 
         if (usesSingleQuotes) {
@@ -84,7 +87,12 @@ public class JSONX
     {
         do
         {
-            mJSONDictionary = try JSONSerialization.jsonObject(with:inData, options:[.allowFragments]) as! Dictionary<String, Any>
+            let dictionary:Dictionary<String, Any> = try JSONSerialization.jsonObject(with:inData, options:[.allowFragments]) as! Dictionary<String, Any>
+
+            // must have a dictionary
+            guard (dictionary.count > 0) else { return nil }
+
+            mJSONDictionary = dictionary
         }
         catch let error
         {
@@ -97,8 +105,11 @@ public class JSONX
     ///
     /// Init with `Dictionary`.
     ///
-    public init(with inDictionary:Dictionary<String, Any>)
+    public init?(with inDictionary:Dictionary<String, Any>)
     {
+        // must have a dictionary
+        guard (inDictionary.count > 0) else { return nil }
+
         mJSONDictionary = inDictionary
     }
 
@@ -258,15 +269,12 @@ public class JSONX
         // key path must not end with the delimiter
         guard (keyPath.hasSuffix(delimiter) == false) else { return `default` }
 
-        // must have a dictionary
-        guard (mJSONDictionary.count > 0) else { return `default` }
-
-        // must have a delimiter
-        guard (delimiter.characters.count > 0) else { return `default` }
-
         let keyPathComponents:[String] = keyPath.components(separatedBy:delimiter)
 
-        return searchDictionary(keyPathComponents:keyPathComponents, keyPathIndex:0, dictionary:mJSONDictionary)
+        let searchResult:Any? = searchDictionary(keyPathComponents:keyPathComponents, keyPathIndex:0, dictionary:mJSONDictionary)
+        guard (searchResult != nil) else { return `default` }
+
+        return searchResult
     }
 
 

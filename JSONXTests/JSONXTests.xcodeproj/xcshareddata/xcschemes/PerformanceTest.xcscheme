@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4DA4F5BB1DB25409007A1A2C"
-               BuildableName = "PerformanceTest.xctest"
-               BlueprintName = "PerformanceTest"
-               ReferencedContainer = "container:PerformanceTest.xcodeproj">
+               BuildableName = "JSONXTests.xctest"
+               BlueprintName = "JSONXTests"
+               ReferencedContainer = "container:JSONXTests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4DA4F5BB1DB25409007A1A2C"
-               BuildableName = "PerformanceTest.xctest"
-               BlueprintName = "PerformanceTest"
-               ReferencedContainer = "container:PerformanceTest.xcodeproj">
+               BuildableName = "JSONXTests.xctest"
+               BlueprintName = "JSONXTests"
+               ReferencedContainer = "container:JSONXTests.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4DA4F5BB1DB25409007A1A2C"
-            BuildableName = "PerformanceTest.xctest"
-            BlueprintName = "PerformanceTest"
-            ReferencedContainer = "container:PerformanceTest.xcodeproj">
+            BuildableName = "JSONXTests.xctest"
+            BlueprintName = "JSONXTests"
+            ReferencedContainer = "container:JSONXTests.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>

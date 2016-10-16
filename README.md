@@ -1,12 +1,12 @@
 [![MadeInSweden](https://img.shields.io/badge/Made In-Stockholm, Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
-
 [![Status](https://img.shields.io/badge/Status-Active doing well & alive-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![Pod](https://img.shields.io/badge/pod-1.0.0-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Pod](https://img.shields.io/badge/pod-*.*.*-blue.svg)](https://github.com/MKGitHub/JSONX)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS + iOS + tvOS-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![Swift](https://img.shields.io/badge/Swift Version-3.0-blue.svg)](https://github.com/MKGitHub/JSONX)
-
+[![Test Coverage](https://img.shields.io/badge/Test Coverage-97.06%-blue.svg)](https://github.com/MKGitHub/JSONX)
+ 
 
 ![JSONX Logo](https://raw.githubusercontent.com/MKGitHub/JSONX/master/Banner.png)
 
@@ -71,21 +71,21 @@ Just type ".as" to see the function lookup with prefixed function names :-)
 ![asLookup](https://raw.githubusercontent.com/MKGitHub/JSONX/master/asLookup.png)
 
 
-Do you feel the need for speed?
+Performance
 ------
-The provided XCTest measures the performance when it comes to finding a key in a hierarchy.
+The provided XCTest measures the performance when it comes to finding a key in a hierarchy. Usually you would only do this once and cache the value, but it is interesting to see how JSONX compares to other alternatives.
 
 ```text
-     JSONX Syntax: JSONX.asString(inKeyPath:"key1.key2.key3.key4.key5")
+    jsonx.asString(inKeyPath:"key1.key2.key3.key4.key5")
 
-    JAYSON Syntax: JAYSON["key1"]["key2"]["key3"]["key4"]["key5"].string
+    jayson["key1"]["key2"]["key3"]["key4"]["key5"].string
 
-SwiftyJSON Syntax: SwiftyJSON["key1"]["key2"]["key3"]["key4"]["key5"].string
+swiftyjson["key1"]["key2"]["key3"]["key4"]["key5"].string
 ```
 
-Both [JAYSON](https://github.com/muukii/JAYSON) and [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) use Swift Subscripts and the result is loss of performance! While JSONX uses good old key paths – the syntax is also much cleaner and convenient :-)
+Both [JAYSON](https://github.com/muukii/JAYSON) and [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) have implemented Swift Subscripts in ways that cause loss of performance! While JSONX uses good old key paths – the syntax is also much cleaner and convenient :-)
 
-The test measures each call 10000 times, lower is better/faster.
+The test measures each call 10000 times, lower result is better/faster.
 
 |                                   | JSONX | JAYSON | SwiftyJSON |
 |-----------------------------------|:-----:|:------:|:----------:|
@@ -95,8 +95,6 @@ The test measures each call 10000 times, lower is better/faster.
 By measured average JSONX is 1.134x (~13%) faster than JAYSON and 1.735x (~74%) faster than SwiftyJSON.
 
 By passed time JSONX is 1.239x (~24%) faster than JAYSON, and 1.712x (~71%) faster than SwiftyJSON.
-
-Why walk when you can run!
 
 
 Notes

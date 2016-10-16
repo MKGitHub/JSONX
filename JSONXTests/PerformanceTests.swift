@@ -1,17 +1,16 @@
 //
-//  PerformanceTest.swift
-//  PerformanceTest
+//  PerformanceTests.swift
+//  JSONXTests
 //
 //  Created by Mohsan Khan on 2016-10-15.
 //  Copyright © 2016 Mohsan Khan. All rights reserved.
 //
 
 
-import Cocoa
 import XCTest
 
 
-class PerformanceTest:XCTestCase
+class PerformanceTests:XCTestCase
 {
     // MARK: Private Members
     fileprivate var mJSONX:JSONX!
@@ -29,7 +28,7 @@ class PerformanceTest:XCTestCase
         do
         {
             // load JSON file as Data
-            let bundle:Bundle = Bundle(for:PerformanceTest.self)
+            let bundle:Bundle = Bundle(for:PerformanceTests.self)
             let filePath:String = bundle.path(forResource:"test", ofType:"json")!
             let fileContents:String = try String(contentsOfFile:filePath)
             let data:Data = fileContents.data(using:String.Encoding.utf8)!
@@ -113,37 +112,4 @@ class PerformanceTest:XCTestCase
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -67,7 +67,7 @@ jsonx.asString(inKeyPath:"parent.child.puppy.name") // returns "voffy"
 
 Tailored for your Swifty needs!
 ------
-Just type ".as" to see the function lookup with prefixed function names :-)
+Just type *.as* to see the function lookup with prefixed function names :-)
 ![asLookup](https://raw.githubusercontent.com/MKGitHub/JSONX/master/asLookup.png)
 
 

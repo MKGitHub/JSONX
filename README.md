@@ -5,8 +5,8 @@
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS + iOS + tvOS-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![Swift](https://img.shields.io/badge/Swift Version-3.0-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![Test Coverage](https://img.shields.io/badge/Test Coverage-97.06%-blue.svg)](https://github.com/MKGitHub/JSONX)
- 
+[![TestCoverage](https://img.shields.io/badge/Test Coverage-97.06％-blue.svg)](https://github.com/MKGitHub/JSONX)
+
 
 ![JSONX Logo](https://raw.githubusercontent.com/MKGitHub/JSONX/master/Banner.png)
 

@@ -97,6 +97,11 @@ By measured average JSONX is 1.134x (~13%) faster than JAYSON and 1.735x (~74%) 
 By passed time JSONX is 1.239x (~24%) faster than JAYSON, and 1.712x (~71%) faster than SwiftyJSON.
 
 
+Used By
+------
+[McDonald's Sweden](https://itunes.apple.com/se/app/mcdonalds-sverige/id322810359?mt=8)
+
+
 Notes
 ------
    https://github.com/MKGitHub/JSONX

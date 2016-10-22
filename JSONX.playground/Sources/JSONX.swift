@@ -28,7 +28,7 @@
 import Foundation
 
 
-public class JSONX
+public final class JSONX
 {
     // MARK: Private Members
     fileprivate let mJSONDictionary:Dictionary<String, Any>!
@@ -62,7 +62,32 @@ public class JSONX
 
 
     ///
-    /// Init with file `URL`.
+    /// Init with file contents at path.
+    ///
+    public convenience init?(with filepath:String)
+    {
+        do
+        {
+            let fileContents:String = try String(contentsOfFile:filepath, encoding:.utf8)
+
+            if let data:Data = fileContents.data(using:.utf8)
+            {
+                self.init(with:data)
+                return
+            }
+
+            return nil
+        }
+        catch let error
+        {
+            print("JSONX failed: \(error.localizedDescription)")
+            return nil
+        }
+    }
+
+
+    ///
+    /// Init with file contents at `URL`.
     ///
     public convenience init?(with inFileURL:URL)
     {

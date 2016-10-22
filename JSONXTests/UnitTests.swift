@@ -15,23 +15,53 @@ class UnitTests:XCTestCase
     func testInitJSONX()
     {
         // init with String
-        let jsonXOptionalFromString1:JSONX? = JSONX(with:"{'name':'Khan Solo'}" /* , usesSingleQuotes:true */)
-        let jsonXOptionalFromString2:JSONX? = JSONX(with:"{'name':'Khan Solo'}", usesSingleQuotes:true)
-
-        print(jsonXOptionalFromString2?.description())
-
-        // the tests
         XCTAssertNil(JSONX(with:""), "Should be nil because string is empty!")
+
+        // init with String
+        let jsonXOptionalFromString1:JSONX? = JSONX(with:"{'name':'Khan Solo'}" /* , usesSingleQuotes:true */)
         XCTAssertNil(jsonXOptionalFromString1, "Should be nil because we use single quotes instead of the default double quotes!")
+
+        // init with String
+        let jsonXOptionalFromString2:JSONX? = JSONX(with:"{'name':'Khan Solo'}", usesSingleQuotes:true)
+        print(jsonXOptionalFromString2?.description())
+        dump(jsonXOptionalFromString2)
         XCTAssertNotNil(jsonXOptionalFromString2, "Should not be nil because we use single quotes!")
 
-        // init with file
-        let bundle:Bundle = Bundle(for:UnitTests.self)
-        let filePath:String = bundle.path(forResource:"test", ofType:"json")!
-        XCTAssertNotNil(JSONX(with:URL(fileURLWithPath:filePath)), "Should work as expected.")
+        //
+
+        // init with file contents at path
+        let bundle1:Bundle = Bundle(for:UnitTests.self)
+        let filePath1:String = bundle1.path(forResource:"test", ofType:"json")!
+        XCTAssertNotNil(JSONX(with:filePath1), "Should work as expected.")
+
+        //
+
+        // init with file at URL
+        let fileUrl1:URL = URL(fileURLWithPath:"ThisPathDoesNotExist")
+        XCTAssertNil(JSONX(with:fileUrl1), "Should not work because file does not exist at URL!")
+
+        // init with file at URL
+        let filePath4:String = bundle1.path(forResource:"test", ofType:"json")!
+        let fileUrl2:URL = URL(fileURLWithPath:filePath4)
+        XCTAssertNotNil(JSONX(with:fileUrl2), "Should work as expected.")
+
+        //
 
         // init with dictionary
         XCTAssertNil(JSONX(with:[:]), "Should fail because dictionary is empty!")
+
+        // init with dictionary
+        let testDict:Dictionary<String, Any> = ["abc":123, "xyz":true, "foo":12.3456]
+        XCTAssertNotNil(JSONX(with:testDict), "Should work as expected.")
+
+        //
+
+        // init with Data
+        XCTAssertNil(JSONX(with:Data()), "Should fail because data is empty!")
+
+        // init with Data
+        let data:Data? = JSONX.convertSingleQuotesToDoubleQuotes("{'name':'Khan Solo'}").data(using:String.Encoding.utf8)
+        XCTAssertNotNil(JSONX(with:data!), "Should work as expected.")
     }
 
 

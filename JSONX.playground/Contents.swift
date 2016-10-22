@@ -35,9 +35,15 @@ func ExampleUsage()
     guard let jsonXFromString:JSONX = jsonXOptionalFromString else { print("Failed to create JSONX object!"); return }
     print("JSONX with String:", jsonXFromString.description(), "\n")
 
+    // init with file contents at path
+    let filePath1:String = Bundle.main.path(forResource:"example", ofType:"json")!
+    let jsonXOptionalFilepath:JSONX? = JSONX(with:filePath1)
+    guard let jsonXFromFilepath:JSONX = jsonXOptionalFilepath else { print("Failed to create JSONX object!"); return }
+    print("JSONX with file contents at path:", jsonXFromFilepath.description(), "\n")
+
     // init with file contents at URL
-    let filePath:String = Bundle.main.path(forResource:"example", ofType:"json")!
-    let url:URL = URL(fileURLWithPath:filePath)
+    let filePath2:String = Bundle.main.path(forResource:"example", ofType:"json")!
+    let url:URL = URL(fileURLWithPath:filePath2)
     let jsonXOptionalFileURL:JSONX? = JSONX(with:url)
     guard let jsonXFromFileURL:JSONX = jsonXOptionalFileURL else { print("Failed to create JSONX object!"); return }
     print("JSONX with file contents at URL:", jsonXFromFileURL.description(), "\n")

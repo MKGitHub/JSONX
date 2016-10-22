@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JSONX"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Parse JSON data, simple, lightweight & without noise."
 
   s.homepage     = "https://github.com/MKGitHub/JSONX"

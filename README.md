@@ -21,6 +21,9 @@ Example Usage
 // init with String
 JSONX(with:"{'name':'Khan Solo'}", usesSingleQuotes:true)
 
+// init with file contents at path
+JSONX(with:url)
+
 // init with file contents at URL
 JSONX(with:url)
 

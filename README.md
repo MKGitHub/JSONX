@@ -67,6 +67,42 @@ Search using key paths:
 jsonx.asString(inKeyPath:"parent.child.puppy.name") // returns "voffy"
 ```
 
+Simple JSON -> Swift Struct model mapping
+------
+```json
+{
+    "Person":
+    {
+        "name": "Khan Solo",
+        "age": 99
+    }
+}
+```
+```swift
+struct PersonModel
+{
+    var name:String?
+    var age:Int?
+    var level:Int?
+
+    static func `init`(jsonx:JSONX)
+    -> PersonModel?
+    {
+        var pm:PersonModel = PersonModel()
+
+        pm.name = jsonx.asString("name", default:"Johnny Appleseed")
+        pm.age = jsonx.asInt("age", default:0)
+
+        // this will default to 0 because we are looking to the key "level"
+        // but the JSON does not have it
+        pm.level = jsonx.asInt("level", default:0)
+
+        return pm
+    }
+}
+
+PersonModel.init(jsonx:)
+```
 
 Tailored for your Swifty needs!
 ------

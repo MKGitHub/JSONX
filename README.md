@@ -27,7 +27,7 @@ JSONX(with:path)
 // init with file contents at URL
 JSONX(with:url)
 
-// init with Data
+// init with Data (i.e. from your networking lib etc.)
 JSONX(with:data)
 
 // init with Dictionary<String, Any>

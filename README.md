@@ -22,7 +22,7 @@ Example Usage
 JSONX(with:"{'name':'Khan Solo'}", usesSingleQuotes:true)
 
 // init with file contents at path
-JSONX(with:url)
+JSONX(with:path)
 
 // init with file contents at URL
 JSONX(with:url)

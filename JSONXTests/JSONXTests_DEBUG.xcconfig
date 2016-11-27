@@ -1,6 +1,8 @@
 //
-//   Last Update: 20 Sep 2016
-// Xcode Version: 8 GM (8A218a)
+// Debug
+//
+//   Last Update: 25 Nov 2016, version 8
+// Xcode Version: 8.1 (8B62)
 // Swift Version: 3.0
 //
 // https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/1-Build_Setting_Reference/build_setting_ref.html
@@ -11,9 +13,13 @@
 
 SWIFT_VERSION = 3.0
 
+ENABLE_BITCODE = YES
+
 ONLY_ACTIVE_ARCH = YES
 
-DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+DEBUG_INFORMATION_FORMAT = dwarf
+DEBUG_INFORMATION_FORMAT[sdk=iphonesimulator*] = dwarf
+DEBUG_INFORMATION_FORMAT[sdk=iphoneos*] = dwarf-with-dsym
 
 GCC_OPTIMIZATION_LEVEL = 0
 
@@ -42,7 +48,7 @@ COMBINE_HIDPI_IMAGES = YES
 LD_NO_PIE = NO
 GCC_DYNAMIC_NO_PIC = YES
 
-GCC_NO_COMMON_BLOCKS = NO
+GCC_NO_COMMON_BLOCKS = YES;
 
 GCC_UNROLL_LOOPS = YES
 
@@ -57,7 +63,7 @@ CLANG_ENABLE_MODULES = YES
 
 CLANG_ENABLE_OBJC_ARC = YES
 
-ENABLE_STRICT_OBJC_MSGSEND = NO
+ENABLE_STRICT_OBJC_MSGSEND = YES;
 
 CLANG_WARN_SUSPICIOUS_MOVE = YES
 
@@ -124,6 +130,8 @@ ENABLE_TESTABILITY = YES
 ASSETCATALOG_COMPILER_OPTIMIZATION = time
 
 EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO
+
+MTL_ENABLE_DEBUG_INFO = YES;
 
 
 //

@@ -23,7 +23,7 @@ class UnitTests:XCTestCase
 
         // init with String
         let jsonXOptionalFromString2:JSONX? = JSONX(with:"{'name':'Khan Solo'}", usesSingleQuotes:true)
-        print(jsonXOptionalFromString2?.description())
+        print(jsonXOptionalFromString2?.description() as Any)
         dump(jsonXOptionalFromString2)
         XCTAssertNotNil(jsonXOptionalFromString2, "Should not be nil because we use single quotes!")
 

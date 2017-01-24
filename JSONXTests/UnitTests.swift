@@ -15,6 +15,8 @@ class UnitTests:XCTestCase
     func testInitJSONX()
     {
         // init with String
+        XCTAssertNil(JSONX(with:"", usesSingleQuotes:true), "Should be nil because string is empty!")
+        XCTAssertNil(JSONX(with:"", usesSingleQuotes:false), "Should be nil because string is empty!")
         XCTAssertNil(JSONX(with:""), "Should be nil because string is empty!")
 
         // init with String
@@ -102,29 +104,44 @@ class UnitTests:XCTestCase
         guard let jsonx:JSONX = jsonXOptionalFromDictionary else { print("Failed to create JSONX object!"); return }
 
         // the tests
+        XCTAssertEqual(jsonx.asRaw("nonExistingKey", default:"defaultValue") as? String, "defaultValue", "Test `asRaw` failed!")
+
         XCTAssertEqual(jsonx.asRaw("testString") as? String, "ThisStringWorks", "Test `asRaw` failed!")
 
+        XCTAssertEqual(jsonx.asBool("nonExistingKey", default:true), true, "Test `asBool` failed!")
         XCTAssertTrue(jsonx.asBool("testBoolTrue")!, "Test `asBool` failed!")
         XCTAssertFalse(jsonx.asBool("testBoolFalse")!, "Test `asBool` failed!")
 
+        XCTAssertEqual(jsonx.asUInt("nonExistingKey", default:123), 123, "Test `asUInt` failed!")
         XCTAssertEqual(jsonx.asUInt("testUInt"), 100, "Test `asUInt` failed!")
 
+        XCTAssertEqual(jsonx.asInt("nonExistingKey", default:-13), -13, "Test `asInt` failed!")
         XCTAssertEqual(jsonx.asInt("testInt"), -100, "Test `asInt` failed!")
 
+        XCTAssertEqual(jsonx.asFloat("nonExistingKey", default:Float(1.23)), Float(1.23), "Test `asFloat` failed!")
         XCTAssertEqual(jsonx.asFloat("testFloat"), 12.3456, "Test `asFloat` failed!")
 
+        XCTAssertEqual(jsonx.asDouble("nonExistingKey", default:Double(2.45)), Double(2.45), "Test `asDouble` failed!")
         XCTAssertEqual(jsonx.asDouble("testDouble"), 12.3456789, "Test `asDouble` failed!")
 
+        XCTAssertEqual(jsonx.asString("nonExistingKey", default:"defaultString"), "defaultString", "Test `asString` failed!")
         XCTAssertEqual(jsonx.asString("testString"), "ThisStringWorks", "Test `asString` failed!")
 
+        let _ = zip(jsonx.asArray("nonExistingKey", default:["abc", 123, true])!, ["abc", 123, true]).map
+        {
+            (e1:Any, e2:Any) in
+            XCTAssertTrue((e1 as AnyObject).isEqual(e2), "Test `asArray` failed!")
+        }
         let _ = zip(jsonx.asArray("testArray")!, ["abc", 123, true]).map
         {
             (e1:Any, e2:Any) in
             XCTAssertTrue((e1 as AnyObject).isEqual(e2), "Test `asArray` failed!")
         }
 
-        let testNSDict1:Dictionary<String, Any> = jsonx.asDictionary("testDictionary")!
+        let nonExistingTestNSDict1:Dictionary<String, Any> = jsonx.asDictionary("nonExistingKey", default:["abc":123, "xyz":true, "foo":12.3456])!
         let testNSDict2:Dictionary<String, Any> = ["abc":123, "xyz":true, "foo":12.3456]
+        XCTAssertTrue(NSDictionary(dictionary:nonExistingTestNSDict1).isEqual(to:testNSDict2), "Test `asDictionary` failed!")
+        let testNSDict1:Dictionary<String, Any> = jsonx.asDictionary("testDictionary")!
         XCTAssertTrue(NSDictionary(dictionary:testNSDict1).isEqual(to:testNSDict2), "Test `asDictionary` failed!")
     }
 
@@ -181,25 +198,20 @@ class UnitTests:XCTestCase
         guard let jsonx:JSONX = jsonXOptionalFromDictionary else { print("Failed to create JSONX object!"); return }
 
         // the tests
-        let foundValue1:Any? = jsonx.asRaw(inKeyPath:"testKeyPath.parent.child.grandChild", usingDelimiter:".")
+        let foundValue1:Any? = jsonx.asRaw(inKeyPath:"testKeyPath.parent.child.grandChild")
         XCTAssertEqual((foundValue1 as! String), "Cute little baby!", "Test `asRaw` 1 failed!")
 
-        XCTAssertNil(jsonx.asRaw(inKeyPath:"", usingDelimiter:"."), "Test `asRaw` 2 failed!")
+        XCTAssertNil(jsonx.asRaw(inKeyPath:""), "Test `asRaw` 2 failed!")
 
-        XCTAssertNil(jsonx.asRaw(inKeyPath:".testKeyPath", usingDelimiter:"."), "Test `asRaw` 3 failed!")
+        XCTAssertNil(jsonx.asRaw(inKeyPath:".testKeyPath"), "Test `asRaw` 3 failed!")
 
-        XCTAssertNil(jsonx.asRaw(inKeyPath:"testKeyPath.", usingDelimiter:"."), "Test `asRaw` 4 failed!")
+        XCTAssertNil(jsonx.asRaw(inKeyPath:"testKeyPath."), "Test `asRaw` 4 failed!")
 
-        XCTAssertNil(jsonx.asRaw(inKeyPath:"nonExistingKey", usingDelimiter:"."), "Test `asRaw` 4 failed!")
+        XCTAssertNil(jsonx.asRaw(inKeyPath:"nonExistingKey"), "Test `asRaw` 4 failed!")
 
         XCTAssertNil(jsonx.asRaw(inKeyPath:"testKeyPath.parent.child.grandChild.nonExistingKey"), "Test `asRaw` 5 failed!")
 
-        let foundValue2:Any? = jsonx.asRaw(inKeyPath:"testKeyPath->parent->child->grandChild", usingDelimiter:"->")
-        XCTAssertEqual((foundValue2 as! String), "Cute little baby!", "Test `asRaw` 6 failed!")
-
-        XCTAssertNil(jsonx.asRaw(inKeyPath:"testKeyPath.parent.child.grandChild", usingDelimiter:""), "Test `asRaw` 7 failed!")
-
-        XCTAssertNil(jsonx.asRaw(inKeyPath:"testKeyPath.parent.child.grandChild", usingDelimiter:"_"), "Test `asRaw` 8 failed!")
+        XCTAssertNil(jsonx.asRaw(inKeyPath:"wrong->key->path->format"), "Test `asRaw` 6 failed!")
 
         //
 
@@ -207,13 +219,13 @@ class UnitTests:XCTestCase
 
         XCTAssertFalse(jsonx.asBool(inKeyPath:"testKeyPath.parent.child.testBoolFalse")!, "Test `asBool` failed!")
 
-        XCTAssertEqual(jsonx.asUInt(inKeyPath:"testKeyPath.parent.child.testUInt"), 100, "Test `asUInt` failed!")
+        XCTAssertEqual(jsonx.asUInt(inKeyPath:"testKeyPath.parent.child.testUInt"), UInt(100), "Test `asUInt` failed!")
 
-        XCTAssertEqual(jsonx.asInt(inKeyPath:"testKeyPath.parent.child.testInt"), -100, "Test `asInt` failed!")
+        XCTAssertEqual(jsonx.asInt(inKeyPath:"testKeyPath.parent.child.testInt"), Int(-100), "Test `asInt` failed!")
 
-        XCTAssertEqual(jsonx.asFloat(inKeyPath:"testKeyPath.parent.child.testFloat"), 12.3456, "Test `asFloat` failed!")
+        XCTAssertEqual(jsonx.asFloat(inKeyPath:"testKeyPath.parent.child.testFloat"), Float(12.3456), "Test `asFloat` failed!")
 
-        XCTAssertEqual(jsonx.asDouble(inKeyPath:"testKeyPath.parent.child.testDouble"), 12.3456789, "Test `asDouble` failed!")
+        XCTAssertEqual(jsonx.asDouble(inKeyPath:"testKeyPath.parent.child.testDouble"), Double(12.3456789), "Test `asDouble` failed!")
 
         XCTAssertEqual(jsonx.asString(inKeyPath:"testKeyPath.parent.child.testString"), "ThisStringWorks", "Test `asString` failed!")
 
@@ -278,23 +290,23 @@ class UnitTests:XCTestCase
         guard let jsonx:JSONX = jsonXOptionalFromDictionary else { print("Failed to create JSONX object!"); return }
 
         // the tests
-        XCTAssertEqual(jsonx.asRaw(inKeyPath:"nonExistingKey", default:"raw food", usingDelimiter:".") as? String, "raw food", "Test `asRaw` failed!")
+        XCTAssertEqual(jsonx.asRaw(inKeyPath:"nonExistingKey", default:"raw food") as? String, "raw food", "Test `asRaw` failed!")
 
-        XCTAssertEqual(jsonx.asRaw(inKeyPath:"nonExistingKey.path", default:"raw food", usingDelimiter:".") as? String, "raw food", "Test `asRaw` failed!")
+        XCTAssertEqual(jsonx.asRaw(inKeyPath:"nonExistingKey.path", default:"raw food") as? String, "raw food", "Test `asRaw` failed!")
 
-        XCTAssertTrue(jsonx.asBool(inKeyPath:"nonExistingKey", default:true, usingDelimiter:".")!, "Test `asBool` failed!")
+        XCTAssertTrue(jsonx.asBool(inKeyPath:"nonExistingKey", default:true)!, "Test `asBool` failed!")
 
-        XCTAssertFalse(jsonx.asBool(inKeyPath:"nonExistingKey", default:false, usingDelimiter:".")!, "Test `asBool` failed!")
+        XCTAssertFalse(jsonx.asBool(inKeyPath:"nonExistingKey", default:false)!, "Test `asBool` failed!")
 
-        XCTAssertEqual(jsonx.asUInt(inKeyPath:"nonExistingKey", default:100, usingDelimiter:"."), 100, "Test `asUInt` failed!")
+        XCTAssertEqual(jsonx.asUInt(inKeyPath:"nonExistingKey", default:100), 100, "Test `asUInt` failed!")
 
-        XCTAssertEqual(jsonx.asInt(inKeyPath:"nonExistingKey", default:-100, usingDelimiter:"."), -100, "Test `asInt` failed!")
+        XCTAssertEqual(jsonx.asInt(inKeyPath:"nonExistingKey", default:-100), -100, "Test `asInt` failed!")
 
-        XCTAssertEqual(jsonx.asFloat(inKeyPath:"nonExistingKey", default:12.34, usingDelimiter:"."), 12.34, "Test `asFloat` failed!")
+        XCTAssertEqual(jsonx.asFloat(inKeyPath:"nonExistingKey", default:12.34), 12.34, "Test `asFloat` failed!")
 
-        XCTAssertEqual(jsonx.asDouble(inKeyPath:"nonExistingKey", default:12.3456789, usingDelimiter:"."), 12.3456789, "Test `asDouble` failed!")
+        XCTAssertEqual(jsonx.asDouble(inKeyPath:"nonExistingKey", default:12.3456789), 12.3456789, "Test `asDouble` failed!")
 
-        XCTAssertEqual(jsonx.asString(inKeyPath:"nonExistingKey", default:"Default str", usingDelimiter:"."), "Default str", "Test `asRaw` failed!")
+        XCTAssertEqual(jsonx.asString(inKeyPath:"nonExistingKey", default:"Default str"), "Default str", "Test `asRaw` failed!")
 
         let _ = zip(jsonx.asArray(inKeyPath:"nonExistingKey", default:["abc", 123, true])!, ["abc", 123, true]).map
         {

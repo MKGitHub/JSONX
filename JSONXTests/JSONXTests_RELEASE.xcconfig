@@ -1,7 +1,7 @@
 //
 // Release
 //
-//   Last Update: 25 Nov 2016, version 8
+//   Last Update: 10 Dec 2016, version 9
 // Xcode Version: 8.1 (8B62)
 // Swift Version: 3.0
 //
@@ -31,7 +31,8 @@ SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
 
 SWIFT_ACTIVE_COMPILATION_CONDITIONS =
 
-OTHER_SWIFT_FLAGS = -Xfrontend -debug-time-function-bodies
+// limit compile time to 100ms, warn if longer
+OTHER_SWIFT_FLAGS = -Xfrontend -debug-time-function-bodies //-warn-long-function-bodies=100
 
 RUN_CLANG_STATIC_ANALYZER = NO
 CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep

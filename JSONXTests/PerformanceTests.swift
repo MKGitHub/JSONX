@@ -60,8 +60,8 @@ class PerformanceTests:XCTestCase
 
 
     ///
-    /// measured [Time, seconds] average: 0.798
-    /// passed (8.237 seconds)
+    /// measured [Time, seconds] average: 0.078
+    /// passed (1.035 seconds)
     ///
     func testPerformance_SearchKey_JSONX()
     {
@@ -77,10 +77,10 @@ class PerformanceTests:XCTestCase
 
     ///
     /// https://github.com/muukii/JAYSON
-    /// 0.6.1
+    /// 0.6.2
     ///
-    /// measured [Time, seconds] average: 0.905
-    /// passed (10.213 seconds)
+    /// measured [Time, seconds] average: 0.163
+    /// passed (1.884 seconds)
     ///
     func testPerformance_SearchKey_JAYSON()
     {
@@ -96,10 +96,10 @@ class PerformanceTests:XCTestCase
 
     ///
     /// https://github.com/SwiftyJSON/SwiftyJSON
-    /// 3.1.1
+    /// 3.1.4
     ///
-    /// measured [Time, seconds] average: 1.385
-    /// passed (14.107 seconds)
+    /// measured [Time, seconds] average: 1.097
+    /// passed (11.659 seconds)
     ///
     func testPerformance_SearchKey_SwiftyJSON()
     {

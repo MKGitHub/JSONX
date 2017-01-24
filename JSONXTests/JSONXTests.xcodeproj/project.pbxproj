@@ -17,8 +17,6 @@
 		4D6512F61DB3AF6B009EC143 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6512E71DB3AF6B009EC143 /* SwiftyJSON.swift */; };
 		4D6512F71DB3AF6B009EC143 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D6512E81DB3AF6B009EC143 /* test.json */; };
 		4D6512F91DB3AF6B009EC143 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6512EA1DB3AF6B009EC143 /* PerformanceTests.swift */; };
-		4D6512FC1DB3B025009EC143 /* JSONXTests_DEBUG.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4D6512FA1DB3B025009EC143 /* JSONXTests_DEBUG.xcconfig */; };
-		4D6512FD1DB3B025009EC143 /* JSONXTests_RELEASE.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4D6512FB1DB3B025009EC143 /* JSONXTests_RELEASE.xcconfig */; };
 		4D6512FF1DB3B0A6009EC143 /* JSONX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6512FE1DB3B0A6009EC143 /* JSONX.swift */; };
 		4D6513011DB3B1C6009EC143 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6513001DB3B1C6009EC143 /* UnitTests.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +39,7 @@
 		4D6512EA1DB3AF6B009EC143 /* PerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		4D6512FA1DB3B025009EC143 /* JSONXTests_DEBUG.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = JSONXTests_DEBUG.xcconfig; sourceTree = "<group>"; };
 		4D6512FB1DB3B025009EC143 /* JSONXTests_RELEASE.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = JSONXTests_RELEASE.xcconfig; sourceTree = "<group>"; };
-		4D6512FE1DB3B0A6009EC143 /* JSONX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONX.swift; path = ../../JSONX.swift; sourceTree = "<group>"; };
+		4D6512FE1DB3B0A6009EC143 /* JSONX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONX.swift; path = ../../Sources/JSONX.swift; sourceTree = "<group>"; };
 		4D6513001DB3B1C6009EC143 /* UnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 		4DA4F5BC1DB25409007A1A2C /* JSONXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,8 +98,8 @@
 				4D6512FA1DB3B025009EC143 /* JSONXTests_DEBUG.xcconfig */,
 				4D6512FB1DB3B025009EC143 /* JSONXTests_RELEASE.xcconfig */,
 				4D6512E91DB3AF6B009EC143 /* Info.plist */,
-				4D6512EA1DB3AF6B009EC143 /* PerformanceTests.swift */,
 				4D6513001DB3B1C6009EC143 /* UnitTests.swift */,
+				4D6512EA1DB3AF6B009EC143 /* PerformanceTests.swift */,
 				4D6512D91DB3AF6B009EC143 /* Test Sources */,
 				4DA4F5AE1DB25409007A1A2C /* Products */,
 			);
@@ -142,7 +140,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mohsan Khan";
 				TargetAttributes = {
 					4DA4F5BB1DB25409007A1A2C = {
@@ -175,9 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D6512FC1DB3B025009EC143 /* JSONXTests_DEBUG.xcconfig in Resources */,
 				4D6512F71DB3AF6B009EC143 /* test.json in Resources */,
-				4D6512FD1DB3B025009EC143 /* JSONXTests_RELEASE.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JSONX"
-  s.version      = "1.0.1"
+  s.version      = "1.1.0"
   s.summary      = "Parse JSON data, simple, lightweight & without noise."
 
   s.homepage     = "https://github.com/MKGitHub/JSONX"
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/MKGitHub/JSONX.git", :tag => "#{s.version}" }
 
-  s.source_files = "JSONX.swift"
+  s.source_files = "Sources/JSONX.swift"
 
   s.requires_arc = true
 

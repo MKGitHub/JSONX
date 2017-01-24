@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JSONX Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/JSONX" class="dashAnchor"></a>
+    <a title="JSONX Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        JSONX Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/JSONX.html">JSONX</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>JSONX</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">JSONX</span></code></pre>
+
+                </div>
+              </div>
+            <p>The core class of JSONX.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MARK:-%20Life%20Cycle"></a>
+                <a name="//apple_ref/swift/Section/MARK:- Life Cycle" class="dashAnchor"></a>
+                <a href="#/MARK:-%20Life%20Cycle">
+                  <h3 class="section-name">MARK:- Life Cycle</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONXcFT4withSS16usesSingleQuotesSb_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/init(with:usesSingleQuotes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONXcFT4withSS16usesSingleQuotesSb_GSqS0__">init(with:usesSingleQuotes:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Init with <code>String</code>.</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter initString: The string to init JSONX with.
+
+</div>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter usesSingleQuotes: Set to true and use single quotes in the string without the need to escape double quotes.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">?(</span><span class="n">with</span> <span class="nv">initString</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">usesSingleQuotes</span><span class="p">:</span><span class="kt">Bool</span><span class="o">=</span><span class="kc">false</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>initString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The string to init JSONX with.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>usesSingleQuotes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Set to true and use single quotes in the string without the need to escape double quotes.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONXcFT4withSS_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/init(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONXcFT4withSS_GSqS0__">init(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Init with file path.</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter filepath: A path to a file.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">?(</span><span class="n">with</span> <span class="nv">filepath</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>filepath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A path to a file.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONXcFT4withV10Foundation3URL_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/init(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONXcFT4withV10Foundation3URL_GSqS0__">init(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Init with file <code>URL</code>.</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter fileURL: An URL to a file.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">?(</span><span class="n">with</span> <span class="nv">fileURL</span><span class="p">:</span><span class="kt">URL</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileURL</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An URL to a file.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONXcFT4withV10Foundation4Data_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/init(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONXcFT4withV10Foundation4Data_GSqS0__">init(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Init with <code>Data</code>.</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter initData: <code>Data</code> object.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="n">with</span> <span class="nv">initData</span><span class="p">:</span><span class="kt">Data</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>initData</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Data</code> object.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONXcFT4withGVs10DictionarySSP___GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/init(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONXcFT4withGVs10DictionarySSP___GSqS0__">init(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Init with <code>Dictionary</code>.</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter initDictionary: <code>Dictionary</code> object.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="n">with</span> <span class="nv">initDictionary</span><span class="p">:</span><span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Any</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>initDictionary</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Dictionary</code> object.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MARK:-%20Accessors"></a>
+                <a name="//apple_ref/swift/Section/MARK:- Accessors" class="dashAnchor"></a>
+                <a href="#/MARK:-%20Accessors">
+                  <h3 class="section-name">MARK:- Accessors</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX5asRawFTSS7defaultGSqP___GSqP__"></a>
+                    <a name="//apple_ref/swift/Method/asRaw(_:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX5asRawFTSS7defaultGSqP___GSqP__">asRaw(_:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as it is in its raw uncasted format.
+I.e. there is no casting to a specific type like in the other <q>as</q> functions.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key.</li>
+<li><code>default</code>: Default value if the key is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asRaw</span><span class="p">(</span><span class="n">_</span> <span class="nv">key</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Any</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Any</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX6asBoolFTSS7defaultGSqSb__GSqSb_"></a>
+                    <a name="//apple_ref/swift/Method/asBool(_:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX6asBoolFTSS7defaultGSqSb__GSqSb_">asBool(_:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Bool</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key.</li>
+<li><code>default</code>: Default value if the key is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asBool</span><span class="p">(</span><span class="n">_</span> <span class="nv">key</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Bool</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX6asUIntFTSS7defaultGSqSu__GSqSu_"></a>
+                    <a name="//apple_ref/swift/Method/asUInt(_:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX6asUIntFTSS7defaultGSqSu__GSqSu_">asUInt(_:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>UInt</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key.</li>
+<li><code>default</code>: Default value if the key is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asUInt</span><span class="p">(</span><span class="n">_</span> <span class="nv">key</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">UInt</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">UInt</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX5asIntFTSS7defaultGSqSi__GSqSi_"></a>
+                    <a name="//apple_ref/swift/Method/asInt(_:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX5asIntFTSS7defaultGSqSi__GSqSi_">asInt(_:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Int</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key.</li>
+<li><code>default</code>: Default value if the key is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asInt</span><span class="p">(</span><span class="n">_</span> <span class="nv">key</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Int</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX7asFloatFTSS7defaultGSqSf__GSqSf_"></a>
+                    <a name="//apple_ref/swift/Method/asFloat(_:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX7asFloatFTSS7defaultGSqSf__GSqSf_">asFloat(_:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Float</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key.</li>
+<li><code>default</code>: Default value if the key is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asFloat</span><span class="p">(</span><span class="n">_</span> <span class="nv">key</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Float</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Float</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX8asDoubleFTSS7defaultGSqSd__GSqSd_"></a>
+                    <a name="//apple_ref/swift/Method/asDouble(_:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX8asDoubleFTSS7defaultGSqSd__GSqSd_">asDouble(_:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Double</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key.</li>
+<li><code>default</code>: Default value if the key is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asDouble</span><span class="p">(</span><span class="n">_</span> <span class="nv">key</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Double</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX8asStringFTSS7defaultGSqSS__GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/asString(_:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX8asStringFTSS7defaultGSqSS__GSqSS_">asString(_:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>String</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key.</li>
+<li><code>default</code>: Default value if the key is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asString</span><span class="p">(</span><span class="n">_</span> <span class="nv">key</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX7asArrayFTSS7defaultGSqGSaP____GSqGSaP___"></a>
+                    <a name="//apple_ref/swift/Method/asArray(_:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX7asArrayFTSS7defaultGSqGSaP____GSqGSaP___">asArray(_:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Array</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key.</li>
+<li><code>default</code>: Default value if the key is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asArray</span><span class="p">(</span><span class="n">_</span> <span class="nv">key</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">Any</span><span class="o">&gt;</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">Any</span><span class="o">&gt;</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX12asDictionaryFTSS7defaultGSqGVs10DictionarySSP____GSqGS1_SSP___"></a>
+                    <a name="//apple_ref/swift/Method/asDictionary(_:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX12asDictionaryFTSS7defaultGSqGVs10DictionarySSP____GSqGS1_SSP___">asDictionary(_:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Dictionary</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key.</li>
+<li><code>default</code>: Default value if the key is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asDictionary</span><span class="p">(</span><span class="n">_</span> <span class="nv">key</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Any</span><span class="o">&gt;</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Any</span><span class="o">&gt;</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MARK:-%20Key%20Path%20Accessors"></a>
+                <a name="//apple_ref/swift/Section/MARK:- Key Path Accessors" class="dashAnchor"></a>
+                <a href="#/MARK:-%20Key%20Path%20Accessors">
+                  <h3 class="section-name">MARK:- Key Path Accessors</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX5asRawFT9inKeyPathSS7defaultGSqP___GSqP__"></a>
+                    <a name="//apple_ref/swift/Method/asRaw(inKeyPath:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX5asRawFT9inKeyPathSS7defaultGSqP___GSqP__">asRaw(inKeyPath:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as it is in its raw uncasted format.
+I.e. there is no casting to a specific type like in the other <q>as</q> functions.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>keyPath: The key path.</li>
+<li><code>default</code>: Default value if the key in the path is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key path, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asRaw</span><span class="p">(</span><span class="n">inKeyPath</span> <span class="nv">keyPath</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Any</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Any</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keyPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key path.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key path, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX6asBoolFT9inKeyPathSS7defaultGSqSb__GSqSb_"></a>
+                    <a name="//apple_ref/swift/Method/asBool(inKeyPath:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX6asBoolFT9inKeyPathSS7defaultGSqSb__GSqSb_">asBool(inKeyPath:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Bool</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key path.</li>
+<li><code>default</code>: Default value if the key in the path is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key path, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asBool</span><span class="p">(</span><span class="n">inKeyPath</span> <span class="nv">keyPath</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Bool</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key path.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key path, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX6asUIntFT9inKeyPathSS7defaultGSqSu__GSqSu_"></a>
+                    <a name="//apple_ref/swift/Method/asUInt(inKeyPath:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX6asUIntFT9inKeyPathSS7defaultGSqSu__GSqSu_">asUInt(inKeyPath:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>UInt</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key path.</li>
+<li><code>default</code>: Default value if the key in the path is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key path, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asUInt</span><span class="p">(</span><span class="n">inKeyPath</span> <span class="nv">keyPath</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">UInt</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">UInt</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key path.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key path, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX5asIntFT9inKeyPathSS7defaultGSqSi__GSqSi_"></a>
+                    <a name="//apple_ref/swift/Method/asInt(inKeyPath:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX5asIntFT9inKeyPathSS7defaultGSqSi__GSqSi_">asInt(inKeyPath:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Int</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key path.</li>
+<li><code>default</code>: Default value if the key in the path is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key path, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asInt</span><span class="p">(</span><span class="n">inKeyPath</span> <span class="nv">keyPath</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Int</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key path.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key path, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX7asFloatFT9inKeyPathSS7defaultGSqSf__GSqSf_"></a>
+                    <a name="//apple_ref/swift/Method/asFloat(inKeyPath:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX7asFloatFT9inKeyPathSS7defaultGSqSf__GSqSf_">asFloat(inKeyPath:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Float</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key path.</li>
+<li><code>default</code>: Default value if the key in the path is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key path, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asFloat</span><span class="p">(</span><span class="n">inKeyPath</span> <span class="nv">keyPath</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Float</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Float</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key path.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key path, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX8asDoubleFT9inKeyPathSS7defaultGSqSd__GSqSd_"></a>
+                    <a name="//apple_ref/swift/Method/asDouble(inKeyPath:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX8asDoubleFT9inKeyPathSS7defaultGSqSd__GSqSd_">asDouble(inKeyPath:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Double</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key path.</li>
+<li><code>default</code>: Default value if the key in the path is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key path, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asDouble</span><span class="p">(</span><span class="n">inKeyPath</span> <span class="nv">keyPath</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Double</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key path.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key path, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX8asStringFT9inKeyPathSS7defaultGSqSS__GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/asString(inKeyPath:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX8asStringFT9inKeyPathSS7defaultGSqSS__GSqSS_">asString(inKeyPath:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>String</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key path.</li>
+<li><code>default</code>: Default value if the key in the path is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key path, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asString</span><span class="p">(</span><span class="n">inKeyPath</span> <span class="nv">keyPath</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key path.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key path, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX7asArrayFT9inKeyPathSS7defaultGSqGSaP____GSqGSaP___"></a>
+                    <a name="//apple_ref/swift/Method/asArray(inKeyPath:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX7asArrayFT9inKeyPathSS7defaultGSqGSaP____GSqGSaP___">asArray(inKeyPath:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Array</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key path.</li>
+<li><code>default</code>: Default value if the key in the path is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key path, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asArray</span><span class="p">(</span><span class="n">inKeyPath</span> <span class="nv">keyPath</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">Any</span><span class="o">&gt;</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">Any</span><span class="o">&gt;</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key path.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key path, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX12asDictionaryFT9inKeyPathSS7defaultGSqGVs10DictionarySSP____GSqGS1_SSP___"></a>
+                    <a name="//apple_ref/swift/Method/asDictionary(inKeyPath:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX12asDictionaryFT9inKeyPathSS7defaultGSqGVs10DictionarySSP____GSqGS1_SSP___">asDictionary(inKeyPath:default:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value as a <code>Dictionary</code>.</p>
+
+<p><li>Parameters:</p>
+
+<p><ul>
+<li>key: The key path.</li>
+<li><code>default</code>: Default value if the key in the path is not found.</li>
+</ul></li>
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The value for the key path, or the default value.</p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asDictionary</span><span class="p">(</span><span class="n">inKeyPath</span> <span class="nv">keyPath</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span><span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Any</span><span class="o">&gt;</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Any</span><span class="o">&gt;</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key path.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value for the key path, or the default value.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MARK:-%20Helpers"></a>
+                <a name="//apple_ref/swift/Section/MARK:- Helpers" class="dashAnchor"></a>
+                <a href="#/MARK:-%20Helpers">
+                  <h3 class="section-name">MARK:- Helpers</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC5JSONX5JSONX33convertSingleQuotesToDoubleQuotesFSSSS"></a>
+                    <a name="//apple_ref/swift/Method/convertSingleQuotesToDoubleQuotes(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC5JSONX5JSONX33convertSingleQuotesToDoubleQuotesFSSSS">convertSingleQuotesToDoubleQuotes(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convert all single quotes to escaped double quotes.</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter text: A string containing single quotes.
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The string containing escaped double quotes.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">convertSingleQuotesToDoubleQuotes</span><span class="p">(</span><span class="n">_</span> <span class="nv">text</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A string containing single quotes.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The string containing escaped double quotes.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MARK:-%20Info"></a>
+                <a name="//apple_ref/swift/Section/MARK:- Info" class="dashAnchor"></a>
+                <a href="#/MARK:-%20Info">
+                  <h3 class="section-name">MARK:- Info</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC5JSONX5JSONX11descriptionFT_SS"></a>
+                    <a name="//apple_ref/swift/Method/description()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC5JSONX5JSONX11descriptionFT_SS">description()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The description of the JSONX contents.</p>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    String description of the JSONX contents.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">description</span><span class="p">()</span>
+    <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>String description of the JSONX contents.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">Mohsan Khan</a>. All rights reserved. (Last updated: 2017-01-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

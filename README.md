@@ -165,7 +165,8 @@ Used In Apps
 ------
 JSONX is used in production in the following apps/games (known to me), these apps are together used by many millions of users every day. Please let me know if you use JSONX.
 
-[McDonald's Sweden](https://itunes.apple.com/se/app/mcdonalds-sverige/id322810359?mt=8)
+* McDonald's Sweden
+* McDonald's Switzerland
 
 
 Notes

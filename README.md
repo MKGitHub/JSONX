@@ -11,6 +11,9 @@
 [![TestCoverage](https://img.shields.io/badge/Test Coverage-92.00％-blue.svg)](https://github.com/MKGitHub/JSONX)
 
 
+★ Give this repo a star and help its development grow! ★
+
+
 ![JSONX Logo](https://raw.githubusercontent.com/MKGitHub/JSONX/master/Images/Banner.png)
 
 Parse JSON data, simple, lightweight & without [noise](https://github.com/SwiftyJSON/SwiftyJSON/issues).

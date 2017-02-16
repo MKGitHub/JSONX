@@ -14,7 +14,7 @@
 ★ Give this repo a star and help its development grow! ★
 
 
-![JSONX Logo](https://raw.githubusercontent.com/MKGitHub/JSONX/master/Images/Banner.png)
+![JSONX Logo](https://github.com/MKGitHub/JSONX/blob/master/Images/Banner.png)
 
 Parse JSON data, simple, lightweight & without [noise](https://github.com/SwiftyJSON/SwiftyJSON/issues).
 
@@ -104,7 +104,7 @@ PersonModel.init(jsonx:myJSONXObject)
 Tailored for your Swifty needs!
 ------
 Just type *.as* to see the function lookup with prefixed function names :-)
-![asLookup](https://raw.githubusercontent.com/MKGitHub/JSONX/master/Images/asLookup.png)
+![asLookup](https://github.com/MKGitHub/JSONX/blob/master/Images/asLookup.png)
 
 
 Performance
@@ -132,7 +132,7 @@ By average time JSONX is 2.08x faster than JAYSON and 14.06x faster than SwiftyJ
 
 By passed time JSONX is 1.82x faster than JAYSON, and 11.26x faster than SwiftyJSON.
 
-![asLookup](https://raw.githubusercontent.com/MKGitHub/JSONX/master/Images/Performance.png)
+![asLookup](https://github.com/MKGitHub/JSONX/blob/master/Images/Performance.png)
 
 
 What’s New?

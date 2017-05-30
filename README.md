@@ -1,14 +1,14 @@
-[![MadeInSweden](https://img.shields.io/badge/Made In-Stockholm, Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
-[![Status](https://img.shields.io/badge/Status-Active doing well & alive-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![MadeInSweden](https://img.shields.io/badge/Made_In-Stockholm_Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
+[![Status](https://img.shields.io/badge/Status-Active_in_development-blue.svg)](https://github.com/MKGitHub/JSONX)
 
 [![Version](https://img.shields.io/badge/Version-1.1.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![Carthage](https://img.shields.io/badge/carthage-1.1.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![SPM](https://img.shields.io/badge/SPM-1.1.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![Pod](https://img.shields.io/badge/pod-1.1.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 
-[![Platform](https://img.shields.io/badge/Platforms-macOS + iOS + tvOS-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![Swift](https://img.shields.io/badge/Swift Version-3.0.1/3.1-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![TestCoverage](https://img.shields.io/badge/Test Coverage-92.00％-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Platform](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Swift](https://img.shields.io/badge/Swift_Version-3.0.1/3.1-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![TestCoverage](https://img.shields.io/badge/Test_Coverage-92.00％-blue.svg)](https://github.com/MKGitHub/JSONX)
 
 
 ★ Give this repo a star and help its development grow! ★

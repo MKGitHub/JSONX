@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/Version-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![Carthage](https://img.shields.io/badge/carthage-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![SPM](https://img.shields.io/badge/SPM-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![Pod](https://img.shields.io/badge/pod-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Pod](removed)](https://github.com/MKGitHub/JSONX)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![Swift](https://img.shields.io/badge/Swift_Version-4.0.0-blue.svg)](https://github.com/MKGitHub/JSONX)
@@ -156,7 +156,7 @@ There is no framework/library distibution, I recommend that you add the JSONX/So
 * Manual: `Drag & Drop the JSONX/Sources into your Xcode project.`
 * Carthage: In your Cartfile add `github "MKGitHub/JSONX" ~> 1.2.0` then `carthage update --no-build` then `Drag & Drop the JSONX/Sources into your Xcode project.`
 * Swift Package Manager (still quite meaningless): run `swift build` or `swift package generate-xcodeproj`
-* CocoaPods (not recommended!): `pod 'JSONX', '~> 1.2.0'`
+* CocoaPods support has been removed! 🎉🙏🙌
 
 
 Documentation

@@ -1,10 +1,10 @@
 [![MadeInSweden](https://img.shields.io/badge/Made_In-Stockholm_Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
-[![Status](https://img.shields.io/badge/Status-Active_in_development-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Status](https://img.shields.io/badge/Status-Active_and_in_development-blue.svg)](https://github.com/MKGitHub/JSONX)
 
 [![Version](https://img.shields.io/badge/Version-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![Carthage](https://img.shields.io/badge/carthage-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![SPM](https://img.shields.io/badge/SPM-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![Pod](removed)](https://github.com/MKGitHub/JSONX)
+[![CocoaPods](https://img.shields.io/badge/CocoaPods-removed-blue.svg)](https://github.com/MKGitHub/JSONX)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![Swift](https://img.shields.io/badge/Swift_Version-4.0.0-blue.svg)](https://github.com/MKGitHub/JSONX)

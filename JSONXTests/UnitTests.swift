@@ -3,7 +3,7 @@
 //  JSONXTests
 //
 //  Created by Mohsan Khan on 2016-10-16.
-//  Copyright © 2016 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
 //
 
 
@@ -129,13 +129,13 @@ class UnitTests:XCTestCase
 
         let _ = zip(jsonx.asArray("nonExistingKey", default:["abc", 123, true])!, ["abc", 123, true]).map
         {
-            (e1:Any, e2:Any) in
-            XCTAssertTrue((e1 as AnyObject).isEqual(e2), "Test `asArray` failed!")
+            (transform:(e1:Any, e2:Any)) in
+            return XCTAssertTrue((transform.e1 as AnyObject).isEqual(transform.e2), "Test `asArray` failed!")
         }
         let _ = zip(jsonx.asArray("testArray")!, ["abc", 123, true]).map
         {
-            (e1:Any, e2:Any) in
-            XCTAssertTrue((e1 as AnyObject).isEqual(e2), "Test `asArray` failed!")
+            (transform:(e1:Any, e2:Any)) in
+            XCTAssertTrue((transform.e1 as AnyObject).isEqual(transform.e2), "Test `asArray` failed!")
         }
 
         let nonExistingTestNSDict1:Dictionary<String, Any> = jsonx.asDictionary("nonExistingKey", default:["abc":123, "xyz":true, "foo":12.3456])!
@@ -231,8 +231,8 @@ class UnitTests:XCTestCase
 
         let _ = zip(jsonx.asArray(inKeyPath:"testKeyPath.parent.child.testArray")!, ["abc", 123, true]).map
         {
-            (e1:Any, e2:Any) in
-            XCTAssertTrue((e1 as AnyObject).isEqual(e2), "Test `asArray` failed!")
+            (transform:(e1:Any, e2:Any)) in
+            XCTAssertTrue((transform.e1 as AnyObject).isEqual(transform.e2), "Test `asArray` failed!")
         }
 
         let testNSDict1:Dictionary<String, Any> = jsonx.asDictionary(inKeyPath:"testKeyPath.parent.child.testDictionary")!
@@ -269,8 +269,8 @@ class UnitTests:XCTestCase
 
         let _ = zip(jsonx.asArray("nonExistingKey", default:["abc", 123, true])!, ["abc", 123, true]).map
         {
-            (e1:Any, e2:Any) in
-            XCTAssertTrue((e1 as AnyObject).isEqual(e2), "Test `asArray` failed!")
+            (transform:(e1:Any, e2:Any)) in
+            XCTAssertTrue((transform.e1 as AnyObject).isEqual(transform.e2), "Test `asArray` failed!")
         }
 
         let testNSDict2:Dictionary<String, Any> = ["abc":123, "xyz":true, "foo":12.3456]
@@ -310,8 +310,8 @@ class UnitTests:XCTestCase
 
         let _ = zip(jsonx.asArray(inKeyPath:"nonExistingKey", default:["abc", 123, true])!, ["abc", 123, true]).map
         {
-            (e1:Any, e2:Any) in
-            XCTAssertTrue((e1 as AnyObject).isEqual(e2), "Test `asArray` failed!")
+            (transform:(e1:Any, e2:Any)) in
+            XCTAssertTrue((transform.e1 as AnyObject).isEqual(transform.e2), "Test `asArray` failed!")
         }
 
         let testNSDict2:Dictionary<String, Any> = ["abc":123, "xyz":true, "foo":12.3456]

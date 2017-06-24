@@ -3,7 +3,7 @@
 //  JSONXTests
 //
 //  Created by Mohsan Khan on 2016-10-15.
-//  Copyright © 2016 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
 //
 
 

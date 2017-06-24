@@ -1,10 +1,10 @@
 [![MadeInSweden](https://img.shields.io/badge/Made_In-Stockholm_Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
 [![Status](https://img.shields.io/badge/Status-Active_in_development-blue.svg)](https://github.com/MKGitHub/JSONX)
 
-[![Version](https://img.shields.io/badge/Version-1.1.0-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![Carthage](https://img.shields.io/badge/carthage-1.1.0-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![SPM](https://img.shields.io/badge/SPM-1.1.0-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![Pod](https://img.shields.io/badge/pod-1.1.0-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Version](https://img.shields.io/badge/Version-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Carthage](https://img.shields.io/badge/carthage-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![SPM](https://img.shields.io/badge/SPM-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Pod](https://img.shields.io/badge/pod-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![Swift](https://img.shields.io/badge/Swift_Version-3.0.1/3.1-blue.svg)](https://github.com/MKGitHub/JSONX)
@@ -154,9 +154,9 @@ How to Install
 There is no framework/library distibution, I recommend that you add the JSONX/Sources to your project. As this will allow you to easily find & read the JSONX API, it will also allow JSONX to compile using your apps build settings. 
 * Git: run `git clone https://github.com/MKGitHub/JSONX.git` then `Drag & Drop the JSONX/Sources into your Xcode project.`
 * Manual: `Drag & Drop the JSONX/Sources into your Xcode project.`
-* Carthage: In your Cartfile add `github "MKGitHub/JSONX" ~> 1.1.0` then `carthage update --no-build` then `Drag & Drop the JSONX/Sources into your Xcode project.`
+* Carthage: In your Cartfile add `github "MKGitHub/JSONX" ~> 1.2.0` then `carthage update --no-build` then `Drag & Drop the JSONX/Sources into your Xcode project.`
 * Swift Package Manager (still quite meaningless): run `swift build` or `swift package generate-xcodeproj`
-* CocoaPods (not recommended!): `pod 'JSONX', '~> 1.1.0'`
+* CocoaPods (not recommended!): `pod 'JSONX', '~> 1.2.0'`
 
 
 Documentation
@@ -180,7 +180,7 @@ Notes
 
    http://www.khanofsweden.com
 
-   Copyright 2016 Mohsan Khan
+   Copyright 2016/2017 Mohsan Khan
 
    Licensed under the Apache License, Version 2.0.
 

@@ -7,7 +7,7 @@
 [![Pod](https://img.shields.io/badge/pod-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![Swift](https://img.shields.io/badge/Swift_Version-3.0.1/3.1-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Swift](https://img.shields.io/badge/Swift_Version-4.0.0-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![TestCoverage](https://img.shields.io/badge/Test_Coverage-92.00％-blue.svg)](https://github.com/MKGitHub/JSONX)
 
 

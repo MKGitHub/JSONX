@@ -123,7 +123,7 @@ swiftyjson["key1"]["key2"]["key3"]["key4"]["key5"].string
 
 The test measures each call 10000 times, lower result is better & faster.
 
-|                       | JSONX 1.1 | JAYSON 0.6.2 | SwiftyJSON 3.1.4 |
+|                       |   JSONX   | JAYSON 0.6.2 | SwiftyJSON 3.1.4 |
 |-----------------------|:---------:|:------------:|:----------------:|
 | Average Time Seconds: |   0.078   |    0.163     |       1.097      |
 |  Passed Time Seconds: |   1.035   |    1.884     |      11.659      |
@@ -137,16 +137,17 @@ By passed time JSONX is 1.82x faster than JAYSON, and 11.26x faster than SwiftyJ
 
 What’s New?
 ------
-* Version 1.1 improves performance as well as minor refactorings.
+* Version 1.1.0 improves performance as well as minor refactorings (Swift 3.0.1/3.1/3.2).
+* Version 1.2.0 adds support for Swift 4.0.0 and Xcode 9.
 
 
 Requirements
 ------
-* Swift Version 3.0.1
-* ARC
-* macOS 10.11 and later
-* iOS 9.0 and later
-* tvOS 9.0 and later
+* Swift Version 4.0.0
+* Xcode 9
+* macOS 10.12 and later
+* iOS 10.0 and later
+* tvOS 10.0 and later
 
 
 How to Install
@@ -156,7 +157,7 @@ There is no framework/library distibution, I recommend that you add the JSONX/So
 * Manual: `Drag & Drop the JSONX/Sources into your Xcode project.`
 * Carthage: In your Cartfile add `github "MKGitHub/JSONX" ~> 1.2.0` then `carthage update --no-build` then `Drag & Drop the JSONX/Sources into your Xcode project.`
 * Swift Package Manager (still quite meaningless): run `swift build` or `swift package generate-xcodeproj`
-* CocoaPods support has been removed! 🎉🙏🙌
+* CocoaPods support has been removed! 🙌🙏🎉
 
 
 Documentation
@@ -168,8 +169,7 @@ Used In Apps
 ------
 JSONX is used in production in the following apps/games (known to me), these apps are together used by many millions of users every day. Please let me know if you use JSONX.
 
-* McDonald's Sweden
-* McDonald's Switzerland
+* McDonald's: Sweden, Switzerland and more
 
 
 Notes

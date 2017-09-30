@@ -1,9 +1,9 @@
 [![MadeInSweden](https://img.shields.io/badge/Made_In-Stockholm_Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
 [![Status](https://img.shields.io/badge/Status-Active_and_in_development-blue.svg)](https://github.com/MKGitHub/JSONX)
 
-[![Version](https://img.shields.io/badge/Version-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![Carthage](https://img.shields.io/badge/carthage-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
-[![SPM](https://img.shields.io/badge/SPM-1.2.0-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Version](https://img.shields.io/badge/Version-1.2.1-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![Carthage](https://img.shields.io/badge/carthage-1.2.1-blue.svg)](https://github.com/MKGitHub/JSONX)
+[![SPM](https://img.shields.io/badge/SPM-1.2.1-blue.svg)](https://github.com/MKGitHub/JSONX)
 [![CocoaPods](https://img.shields.io/badge/CocoaPods-removed-blue.svg)](https://github.com/MKGitHub/JSONX)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS-blue.svg)](https://github.com/MKGitHub/JSONX)
@@ -138,12 +138,13 @@ By passed time JSONX is 1.82x faster than JAYSON, and 11.26x faster than SwiftyJ
 What’s New?
 ------
 * Version 1.1.0 improves performance as well as minor refactorings (Swift 3.0.1/3.1/3.2).
-* Version 1.2.0 adds support for Swift 4.0.0 and Xcode 9.
+* Version 1.2.0 adds support for Swift 4 and Xcode 9.
+* Version 1.2.1 adds support for Swift 4 and Xcode 9.
 
 
 Requirements
 ------
-* Swift Version 4.0.0
+* Swift Version 4
 * Xcode 9
 * macOS 10.12 and later
 * iOS 10.0 and later
@@ -155,7 +156,7 @@ How to Install
 There is no framework/library distibution, I recommend that you add the JSONX/Sources to your project. As this will allow you to easily find & read the JSONX API, it will also allow JSONX to compile using your apps build settings. 
 * Git: run `git clone https://github.com/MKGitHub/JSONX.git` then `Drag & Drop the JSONX/Sources into your Xcode project.`
 * Manual: `Drag & Drop the JSONX/Sources into your Xcode project.`
-* Carthage: In your Cartfile add `github "MKGitHub/JSONX" ~> 1.2.0` then `carthage update --no-build` then `Drag & Drop the JSONX/Sources into your Xcode project.`
+* Carthage: In your Cartfile add `github "MKGitHub/JSONX" ~> 1.2.1` then `carthage update --no-build` then `Drag & Drop the JSONX/Sources into your Xcode project.`
 * Swift Package Manager (still quite meaningless): run `swift build` or `swift package generate-xcodeproj`
 * CocoaPods support has been removed! 🙌🙏🎉
 

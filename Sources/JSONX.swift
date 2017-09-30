@@ -50,7 +50,7 @@ public final class JSONX
     public convenience init?(with initString:String, usesSingleQuotes:Bool=false)
     {
         // must have a string
-        guard (initString.characters.count > 0) else { return nil }
+        guard (initString.count > 0) else { return nil }
 
         var stringToUse:String = initString
 
@@ -353,7 +353,7 @@ public final class JSONX
     -> Any?
     {
         // must have a key path
-        guard (keyPath.characters.count > 0) else { return `default` }
+        guard (keyPath.count > 0) else { return `default` }
 
         // key path must not begin with the delimiter
         guard (keyPath.hasPrefix(".") == false) else { return `default` }

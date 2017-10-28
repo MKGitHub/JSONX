@@ -10,7 +10,7 @@
 import XCTest
 
 
-class UnitTests:XCTestCase
+final class UnitTests:XCTestCase
 {
     func test_InitJSONX()
     {

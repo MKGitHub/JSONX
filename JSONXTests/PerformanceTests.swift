@@ -10,7 +10,7 @@
 import XCTest
 
 
-class PerformanceTests:XCTestCase
+final class PerformanceTests:XCTestCase
 {
     // MARK: Private Members
     fileprivate var mJSONX:JSONX!
@@ -37,7 +37,7 @@ class PerformanceTests:XCTestCase
             mJSONX = JSONX(with:data)
 
             // init SwiftyJSON
-            mSwiftyJSON = JSON(data:data)
+            mSwiftyJSON = try JSON(data:data)
 
             // init JAYSON
             mJAYSON = try JAYSON(data:data)

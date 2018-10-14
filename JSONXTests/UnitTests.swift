@@ -3,7 +3,7 @@
 //  JSONXTests
 //
 //  Created by Mohsan Khan on 2016-10-16.
-//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
 //
 
 
@@ -14,56 +14,56 @@ final class UnitTests:XCTestCase
 {
     func test_InitJSONX()
     {
-        // init with String
-        XCTAssertNil(JSONX(with:"", usesSingleQuotes:true), "Should be nil because string is empty!")
-        XCTAssertNil(JSONX(with:"", usesSingleQuotes:false), "Should be nil because string is empty!")
-        XCTAssertNil(JSONX(with:""), "Should be nil because string is empty!")
+        // init with a `String`
+        XCTAssertNil(JSONX(string:"", usesSingleQuotes:true), "Should be nil because string is empty!")
+        XCTAssertNil(JSONX(string:"", usesSingleQuotes:false), "Should be nil because string is empty!")
+        XCTAssertNil(JSONX(string:""), "Should be nil because string is empty!")
 
-        // init with String
-        let jsonXOptionalFromString1:JSONX? = JSONX(with:"{'name':'Khan Solo'}" /* , usesSingleQuotes:true */)
+        // init with a `String`
+        let jsonXOptionalFromString1:JSONX? = JSONX(string:"{'name':'Khan Solo'}" /* , usesSingleQuotes:true */)
         XCTAssertNil(jsonXOptionalFromString1, "Should be nil because we use single quotes instead of the default double quotes!")
 
-        // init with String
-        let jsonXOptionalFromString2:JSONX? = JSONX(with:"{'name':'Khan Solo'}", usesSingleQuotes:true)
+        // init with a `String`
+        let jsonXOptionalFromString2:JSONX? = JSONX(string:"{'name':'Khan Solo'}", usesSingleQuotes:true)
         print(jsonXOptionalFromString2?.description() as Any)
         dump(jsonXOptionalFromString2)
         XCTAssertNotNil(jsonXOptionalFromString2, "Should not be nil because we use single quotes!")
 
         //
 
-        // init with file contents at path
+        // init with a file path
         let bundle1:Bundle = Bundle(for:UnitTests.self)
         let filePath1:String = bundle1.path(forResource:"test", ofType:"json")!
-        XCTAssertNotNil(JSONX(with:filePath1), "Should work as expected.")
+        XCTAssertNotNil(JSONX(filepath:filePath1), "Should work as expected.")
 
         //
 
-        // init with file at URL
+        // init with a file `URL`
         let fileUrl1:URL = URL(fileURLWithPath:"ThisPathDoesNotExist")
-        XCTAssertNil(JSONX(with:fileUrl1), "Should not work because file does not exist at URL!")
+        XCTAssertNil(JSONX(url:fileUrl1), "Should not work because file does not exist at `URL`!")
 
-        // init with file at URL
+        // init with a file `URL`
         let filePath4:String = bundle1.path(forResource:"test", ofType:"json")!
         let fileUrl2:URL = URL(fileURLWithPath:filePath4)
-        XCTAssertNotNil(JSONX(with:fileUrl2), "Should work as expected.")
+        XCTAssertNotNil(JSONX(url:fileUrl2), "Should work as expected.")
 
         //
 
-        // init with dictionary
-        XCTAssertNil(JSONX(with:[:]), "Should fail because dictionary is empty!")
+        // init with a `Dictionary`
+        XCTAssertNil(JSONX(dictionary:[:]), "Should fail because dictionary is empty!")
 
-        // init with dictionary
+        // init with a `Dictionary`
         let testDict:Dictionary<String, Any> = ["abc":123, "xyz":true, "foo":12.3456]
-        XCTAssertNotNil(JSONX(with:testDict), "Should work as expected.")
+        XCTAssertNotNil(JSONX(dictionary:testDict), "Should work as expected.")
 
         //
 
-        // init with Data
-        XCTAssertNil(JSONX(with:Data()), "Should fail because data is empty!")
+        // init with `Data`
+        XCTAssertNil(JSONX(data:Data()), "Should fail because data is empty!")
 
-        // init with Data
+        // init with `Data`
         let data:Data? = JSONX.convertSingleQuotesToDoubleQuotes("{'name':'Khan Solo'}").data(using:String.Encoding.utf8)
-        XCTAssertNotNil(JSONX(with:data!), "Should work as expected.")
+        XCTAssertNotNil(JSONX(data:data!), "Should work as expected.")
     }
 
 
@@ -98,8 +98,8 @@ final class UnitTests:XCTestCase
             ]
         ]
 
-        // init with Dictionary<String, Any>
-        let jsonXOptionalFromDictionary:JSONX? = JSONX(with:testDictionary)
+        // init with a `Dictionary`
+        let jsonXOptionalFromDictionary:JSONX? = JSONX(dictionary:testDictionary)
 
         guard let jsonx:JSONX = jsonXOptionalFromDictionary else { print("Failed to create JSONX object!"); return }
 
@@ -194,8 +194,8 @@ final class UnitTests:XCTestCase
             ]
         ]
 
-        // init with Dictionary<String, Any>
-        let jsonXOptionalFromDictionary:JSONX? = JSONX(with:testDictionary)
+        // init with a `Dictionary`
+        let jsonXOptionalFromDictionary:JSONX? = JSONX(dictionary:testDictionary)
 
         guard let jsonx:JSONX = jsonXOptionalFromDictionary else { print("Failed to create JSONX object!"); return }
 
@@ -257,8 +257,8 @@ final class UnitTests:XCTestCase
         // test data
         let testDictionary:Dictionary<String, Any> = ["BADKEY":"DONTUSE!"]
 
-        // init with Dictionary<String, Any>
-        let jsonXOptionalFromDictionary:JSONX? = JSONX(with:testDictionary)
+        // init with a `Dictionary`
+        let jsonXOptionalFromDictionary:JSONX? = JSONX(dictionary:testDictionary)
 
         guard let jsonx:JSONX = jsonXOptionalFromDictionary else { print("Failed to create JSONX object!"); return }
 
@@ -295,8 +295,8 @@ final class UnitTests:XCTestCase
         // test data
         let testDictionary:Dictionary<String, Any> = ["BADKEY":"DONTUSE!"]
 
-        // init with Dictionary<String, Any>
-        let jsonXOptionalFromDictionary:JSONX? = JSONX(with:testDictionary)
+        // init with a `Dictionary`
+        let jsonXOptionalFromDictionary:JSONX? = JSONX(dictionary:testDictionary)
 
         guard let jsonx:JSONX = jsonXOptionalFromDictionary else { print("Failed to create JSONX object!"); return }
 
@@ -334,8 +334,8 @@ final class UnitTests:XCTestCase
         // test data
         let testDictionary:Dictionary<String, Any> = ["NullKey":NSNull()]
 
-        // init with Dictionary<String, Any>
-        let jsonXOptionalFromDictionary:JSONX? = JSONX(with:testDictionary)
+        // init with a `Dictionary`
+        let jsonXOptionalFromDictionary:JSONX? = JSONX(dictionary:testDictionary)
 
         guard let jsonx:JSONX = jsonXOptionalFromDictionary else { print("Failed to create JSONX object!"); return }
 
@@ -376,8 +376,8 @@ final class UnitTests:XCTestCase
             "testKeyPath":["NullKey":NSNull()]
         ]
 
-        // init with Dictionary<String, Any>
-        let jsonXOptionalFromDictionary:JSONX? = JSONX(with:testDictionaryKeyPath)
+        // init with a `Dictionary`
+        let jsonXOptionalFromDictionary:JSONX? = JSONX(dictionary:testDictionaryKeyPath)
 
         guard let jsonx:JSONX = jsonXOptionalFromDictionary else { print("Failed to create JSONX object!"); return }
 
@@ -427,32 +427,24 @@ final class UnitTests:XCTestCase
         XCTAssertNil(jsonx.asDictionary(inKeyPath:"testKeyPath.nonExistingKey", default:nil), "Test `asDictionary` failed!")
         XCTAssertNil(jsonx.asDictionary(inKeyPath:"nonExistingKey", default:nil), "Test `asDictionary` failed!")
     }
+
+
+    func test_DictionaryToJSONX()
+    {
+        // test data
+        let testDictionary:Dictionary<String, Any> = [
+            "key1":"value1",
+            "key2":"value2"
+        ]
+
+        // JSONX from a dictionary
+        let jsonXOptionalFromDictionary:JSONX? = testDictionary.toJSONX(context:"test_DictionaryToJSONX")
+
+        guard let jsonx:JSONX = jsonXOptionalFromDictionary else { print("Failed to create JSONX object!"); return }
+
+        // the tests, key path
+        XCTAssertEqual(jsonx.asString(inKeyPath:"key1", default:"Default str 1"), "value1", "Test `asString` failed!")
+        XCTAssertEqual(jsonx.asString(inKeyPath:"key2", default:"Default str 2"), "value2", "Test `asString` failed!")
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

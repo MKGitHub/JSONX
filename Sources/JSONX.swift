@@ -1,16 +1,15 @@
 //
 //  JSONX
-//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
 //
 
 //
 //  https://github.com/MKGitHub/JSONX
 //  http://www.xybernic.com
-//  http://www.khanofsweden.com
 //
 
 //
-//  Copyright 2016/2017 Mohsan Khan
+//  Copyright 2016/2017/2018 Mohsan Khan
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -28,31 +27,31 @@
 import Foundation
 
 
-///
-/// The core class of JSONX.
-///
+/**
+    The core class of `JSONX`.
+*/
 public final class JSONX
 {
     // MARK: Private Members
-    fileprivate let mJSONDictionary:Dictionary<String, Any>!
-    fileprivate let mJSONNSDictionary:NSDictionary!
+    private let mJSONDictionary:Dictionary<String, Any>!
+    private let mJSONNSDictionary:NSDictionary!
 
 
     // MARK:- Life Cycle
 
 
-    ///
-    /// Init with `String`.
-    ///
-    /// - Parameter initString: The string to init JSONX with.
-    /// - Parameter usesSingleQuotes: Set to true and use single quotes in the string without the need to escape double quotes.
-    ///
-    public convenience init?(with initString:String, usesSingleQuotes:Bool=false)
+    /**
+        Init with a `String`.
+
+        - Parameter string: The string to init `JSONX` with e.g. "{'name':'Khan Solo'}".
+        - Parameter usesSingleQuotes: Set to true and use single quotes in the string without the need to escape double quotes.
+    */
+    public convenience init?(string:String, usesSingleQuotes:Bool=false)
     {
         // must have a string
-        guard (initString.count > 0) else { return nil }
+        guard (string.count > 0) else { return nil }
 
-        var stringToUse:String = initString
+        var stringToUse:String = string
 
         if (usesSingleQuotes) {
             stringToUse = JSONX.convertSingleQuotesToDoubleQuotes(stringToUse)
@@ -60,20 +59,20 @@ public final class JSONX
 
         guard let data:Data = stringToUse.data(using:.utf8) else
         {
-            print("JSONX failed: Could not convert string to JSON!")
+            print("🎭 JSONX failed: Could not convert string to JSON!")
             return nil
         }
 
-        self.init(with:data)
+        self.init(data:data)
     }
 
 
-    ///
-    /// Init with file path.
-    ///
-    /// - Parameter filepath: A path to a file.
-    ///
-    public convenience init?(with filepath:String)
+    /**
+        Init with a file path.
+
+        - Parameter filepath: A path to a file.
+    */
+    public convenience init?(filepath:String)
     {
         do
         {
@@ -81,7 +80,7 @@ public final class JSONX
 
             if let data:Data = fileContents.data(using:.utf8)
             {
-                self.init(with:data)
+                self.init(data:data)
                 return
             }
 
@@ -89,91 +88,86 @@ public final class JSONX
         }
         catch let error
         {
-            print("JSONX failed: \(error.localizedDescription)")
+            print("🎭 JSONX failed: \(error.localizedDescription)")
             return nil
         }
     }
 
 
-    ///
-    /// Init with file `URL`.
-    ///
-    /// - Parameter fileURL: An URL to a file.
-    ///
-    public convenience init?(with fileURL:URL)
+    /**
+        Init with a file `URL`.
+
+        - Parameter url: An `URL` to a file.
+    */
+    public convenience init?(url:URL)
     {
         do
         {
-            let data:Data = try Data(contentsOf:fileURL)
+            let data:Data = try Data(contentsOf:url)
 
-            self.init(with:data)
+            self.init(data:data)
         }
         catch let error
         {
-            print("JSONX failed: \(error.localizedDescription)")
+            print("🎭 JSONX failed: \(error.localizedDescription)")
             return nil
         }
     }
 
 
-    ///
-    /// Init with `Data`.
-    ///
-    /// - Parameter initData: `Data` object.
-    ///
-    public init?(with initData:Data)
+    /**
+        Init with `Data`.
+
+        - Parameter data: A `Data` object.
+    */
+    public init?(data:Data)
     {
         do
         {
-            let dictionary:Dictionary<String, Any> = try JSONSerialization.jsonObject(with:initData, options:[.allowFragments]) as! Dictionary<String, Any>
+            let dictionary:Dictionary<String, Any> = try JSONSerialization.jsonObject(with:data, options:[.allowFragments]) as! Dictionary<String, Any>
 
             // must have a dictionary
             guard (dictionary.count > 0) else { return nil }
 
             mJSONDictionary = dictionary
-            mJSONNSDictionary = dictionary as NSDictionary!
+            mJSONNSDictionary = dictionary as NSDictionary
         }
         catch let error
         {
-            print("JSONX failed: \(error.localizedDescription)")
+            print("🎭 JSONX failed: \(error.localizedDescription)")
             return nil
         }
     }
 
 
-    ///
-    /// Init with `Dictionary`.
-    ///
-    /// - Parameter initDictionary: `Dictionary` object.
-    ///
-    public init?(with initDictionary:Dictionary<String, Any>)
+    /**
+        Init with a `Dictionary`.
+
+        - Parameter dictionary: A `Dictionary` object.
+    */
+    public init?(dictionary:Dictionary<String, Any>)
     {
         // must have a dictionary
-        guard (initDictionary.count > 0) else { return nil }
+        guard (dictionary.count > 0) else { return nil }
 
-        mJSONDictionary = initDictionary
-        mJSONNSDictionary = initDictionary as NSDictionary!
+        mJSONDictionary = dictionary
+        mJSONNSDictionary = dictionary as NSDictionary
     }
-
-
-    /*deinit
-    {
-        print("JSONX deinit")
-    }*/
 
 
     // MARK:- Accessors:Key
 
+    
+    /**
+        The value as it is in its raw uncasted format.
+        I.e. there is no casting to a specific type like in the other "as" functions.
 
-    ///
-    /// The value as it is in its raw uncasted format.
-    /// I.e. there is no casting to a specific type like in the other "as" functions.
-    ///
-    /// - Parameters:
-    ///   - key: The key.
-    ///   - `default`: Default value if the key is not found.
-    /// - Returns: The value for the key, or the default value.
-    ///
+        - Parameters:
+            - key: The key.
+            - `default`: Default value if the key is not found.
+
+        - Returns: The value for the key, or the default value.
+    */
     public func asRaw(_ key:String, `default`:Any?=nil) -> Any?
     {
         // if key exists and value is a Any return Any
@@ -185,20 +179,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Bool`.
-    ///
-    /// - Parameters:
-    ///   - key: The key.
-    ///   - `default`: Default value if the key is not found.
-    /// - Returns: The value for the key, or the default value.
-    ///
+    /**
+        The value as a `Bool`.
+
+        - Parameters:
+            - key: The key.
+            - `default`: Default value if the key is not found.
+
+        - Returns: The value for the key, or the default value.
+    */
     public func asBool(_ key:String, `default`:Bool?=nil) -> Bool?
     {
         // if key exists and value is a Bool return Bool
@@ -208,20 +202,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `UInt`.
-    ///
-    /// - Parameters:
-    ///   - key: The key.
-    ///   - `default`: Default value if the key is not found.
-    /// - Returns: The value for the key, or the default value.
-    ///
+    /**
+        The value as a `UInt`.
+
+        - Parameters:
+            - key: The key.
+            - `default`: Default value if the key is not found.
+
+        - Returns: The value for the key, or the default value.
+    */
     public func asUInt(_ key:String, `default`:UInt?=nil) -> UInt?
     {
         // if key exists and value is a UInt return UInt
@@ -231,20 +225,20 @@ public final class JSONX
         {
             return UInt(v)
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Int`.
-    ///
-    /// - Parameters:
-    ///   - key: The key.
-    ///   - `default`: Default value if the key is not found.
-    /// - Returns: The value for the key, or the default value.
-    ///
+    /**
+        The value as a `Int`.
+
+        - Parameters:
+            - key: The key.
+            - `default`: Default value if the key is not found.
+
+        - Returns: The value for the key, or the default value.
+    */
     public func asInt(_ key:String, `default`:Int?=nil) -> Int?
     {
         // if key exists and value is a Int return Int
@@ -254,20 +248,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Float`.
-    ///
-    /// - Parameters:
-    ///   - key: The key.
-    ///   - `default`: Default value if the key is not found.
-    /// - Returns: The value for the key, or the default value.
-    ///
+    /**
+        The value as a `Float`.
+
+        - Parameters:
+            - key: The key.
+            - `default`: Default value if the key is not found.
+
+        - Returns: The value for the key, or the default value.
+    */
     public func asFloat(_ key:String, `default`:Float?=nil) -> Float?
     {
         // if key exists and value is a Float return Float
@@ -277,20 +271,20 @@ public final class JSONX
         {
             return Float(v)    // loss of precision
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Double`.
-    ///
-    /// - Parameters:
-    ///   - key: The key.
-    ///   - `default`: Default value if the key is not found.
-    /// - Returns: The value for the key, or the default value.
-    ///
+    /**
+        The value as a `Double`.
+
+        - Parameters:
+            - key: The key.
+            - `default`: Default value if the key is not found.
+
+        - Returns: The value for the key, or the default value.
+    */
     public func asDouble(_ key:String, `default`:Double?=nil) -> Double?
     {
         // if key exists and value is a Double return Double
@@ -300,20 +294,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `String`.
-    ///
-    /// - Parameters:
-    ///   - key: The key.
-    ///   - `default`: Default value if the key is not found.
-    /// - Returns: The value for the key, or the default value.
-    ///
+    /**
+        The value as a `String`.
+
+        - Parameters:
+            - key: The key.
+            - `default`: Default value if the key is not found.
+
+        - Returns: The value for the key, or the default value.
+    */
     public func asString(_ key:String, `default`:String?=nil) -> String?
     {
         // if key exists and value is a String return String
@@ -323,20 +317,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Array`.
-    ///
-    /// - Parameters:
-    ///   - key: The key.
-    ///   - `default`: Default value if the key is not found.
-    /// - Returns: The value for the key, or the default value.
-    ///
+    /**
+        The value as a `Array`.
+
+        - Parameters:
+            - key: The key.
+            - `default`: Default value if the key is not found.
+
+        - Returns: The value for the key, or the default value.
+    */
     public func asArray(_ key:String, `default`:Array<Any>?=nil) -> Array<Any>?
     {
         // if key exists and value is a Array<Any> return Array<Any>
@@ -346,20 +340,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Dictionary`.
-    ///
-    /// - Parameters:
-    ///   - key: The key.
-    ///   - `default`: Default value if the key is not found.
-    /// - Returns: The value for the key, or the default value.
-    ///
+    /**
+        The value as a `Dictionary`.
+
+        - Parameters:
+            - key: The key.
+            - `default`: Default value if the key is not found.
+
+        - Returns: The value for the key, or the default value.
+    */
     public func asDictionary(_ key:String, `default`:Dictionary<String, Any>?=nil) -> Dictionary<String, Any>?
     {
         // if key exists and value is a Dictionary<String, Any> return Dictionary<String, Any>
@@ -369,31 +363,31 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
     // MARK:- Accessors:Key Path
 
 
-    ///
-    /// The value as it is in its raw uncasted format.
-    /// I.e. there is no casting to a specific type like in the other "as" functions.
-    ///
-    /// - Parameters:
-    ///   - keyPath: The key path.
-    ///   - `default`: Default value if the key in the path is not found.
-    /// - Returns: The value for the key path, or the default value.
-    ///
+    /**
+        The value as it is in its raw uncasted format.
+        I.e. there is no casting to a specific type like in the other "as" functions.
+
+        - Parameters:
+            - keyPath: The key path.
+            - `default`: Default value if the key in the path is not found.
+
+        - Returns: The value for the key path, or the default value.
+    */
     public func asRaw(inKeyPath keyPath:String, `default`:Any?=nil) -> Any?
     {
-        ///
-        /// Note!
-        /// We can't use NSDictionary.value(forKeyPath:keyPath) here since there may be non-existing keys in the path,
-        /// and that will make the call crash. Until future fix by Apple.
-        ///
+        //
+        // NOTE!
+        // We can't use NSDictionary.value(forKeyPath:keyPath) here since there may be non-existing keys in the path,
+        // and that will make the call crash. Until future fix by Apple.
+        //
 
         // must have a key path
         guard (keyPath.count > 0) else { return `default` }
@@ -415,20 +409,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Bool`.
-    ///
-    /// - Parameters:
-    ///   - key: The key path.
-    ///   - `default`: Default value if the key in the path is not found.
-    /// - Returns: The value for the key path, or the default value.
-    ///
+    /**
+        The value as a `Bool`.
+
+        - Parameters:
+            - key: The key path.
+            - `default`: Default value if the key in the path is not found.
+
+        - Returns: The value for the key path, or the default value.
+    */
     public func asBool(inKeyPath keyPath:String, `default`:Bool?=nil) -> Bool?
     {
         // if key exists and value is a Bool return Bool
@@ -438,20 +432,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `UInt`.
-    ///
-    /// - Parameters:
-    ///   - key: The key path.
-    ///   - `default`: Default value if the key in the path is not found.
-    /// - Returns: The value for the key path, or the default value.
-    ///
+    /**
+        The value as a `UInt`.
+
+        - Parameters:
+            - key: The key path.
+            - `default`: Default value if the key in the path is not found.
+
+        - Returns: The value for the key path, or the default value.
+    */
     public func asUInt(inKeyPath keyPath:String, `default`:UInt?=nil) -> UInt?
     {
         // if key exists and value is a UInt return UInt
@@ -461,20 +455,20 @@ public final class JSONX
         {
             return UInt(v)
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Int`.
-    ///
-    /// - Parameters:
-    ///   - key: The key path.
-    ///   - `default`: Default value if the key in the path is not found.
-    /// - Returns: The value for the key path, or the default value.
-    ///
+    /**
+        The value as a `Int`.
+
+        - Parameters:
+            - key: The key path.
+            - `default`: Default value if the key in the path is not found.
+
+        - Returns: The value for the key path, or the default value.
+    */
     public func asInt(inKeyPath keyPath:String, `default`:Int?=nil) -> Int?
     {
         // if key exists and value is a Int return Int
@@ -484,20 +478,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Float`.
-    ///
-    /// - Parameters:
-    ///   - key: The key path.
-    ///   - `default`: Default value if the key in the path is not found.
-    /// - Returns: The value for the key path, or the default value.
-    ///
+    /**
+        The value as a `Float`.
+
+        - Parameters:
+            - key: The key path.
+            - `default`: Default value if the key in the path is not found.
+
+        - Returns: The value for the key path, or the default value.
+    */
     public func asFloat(inKeyPath keyPath:String, `default`:Float?=nil) -> Float?
     {
         // if key exists and value is a Float return Float
@@ -507,20 +501,20 @@ public final class JSONX
         {
             return Float(v)    // loss of precision
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Double`.
-    ///
-    /// - Parameters:
-    ///   - key: The key path.
-    ///   - `default`: Default value if the key in the path is not found.
-    /// - Returns: The value for the key path, or the default value.
-    ///
+    /**
+        The value as a `Double`.
+
+        - Parameters:
+            - key: The key path.
+            - `default`: Default value if the key in the path is not found.
+
+        - Returns: The value for the key path, or the default value.
+    */
     public func asDouble(inKeyPath keyPath:String, `default`:Double?=nil) -> Double?
     {
         // if key exists and value is a Double return Double
@@ -530,20 +524,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `String`.
-    ///
-    /// - Parameters:
-    ///   - key: The key path.
-    ///   - `default`: Default value if the key in the path is not found.
-    /// - Returns: The value for the key path, or the default value.
-    ///
+    /**
+        The value as a `String`.
+
+        - Parameters:
+            - key: The key path.
+            - `default`: Default value if the key in the path is not found.
+
+        - Returns: The value for the key path, or the default value.
+    */
     public func asString(inKeyPath keyPath:String, `default`:String?=nil) -> String?
     {
         // if key exists and value is a String return String
@@ -553,20 +547,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Array`.
-    ///
-    /// - Parameters:
-    ///   - key: The key path.
-    ///   - `default`: Default value if the key in the path is not found.
-    /// - Returns: The value for the key path, or the default value.
-    ///
+    /**
+        The value as a `Array`.
+
+        - Parameters:
+            - key: The key path.
+            - `default`: Default value if the key in the path is not found.
+
+        - Returns: The value for the key path, or the default value.
+    */
     public func asArray(inKeyPath keyPath:String, `default`:Array<Any>?=nil) -> Array<Any>?
     {
         // if key exists and value is a Array<Any> return Array<Any>
@@ -576,20 +570,20 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
-    ///
-    /// The value as a `Dictionary`.
-    ///
-    /// - Parameters:
-    ///   - key: The key path.
-    ///   - `default`: Default value if the key in the path is not found.
-    /// - Returns: The value for the key path, or the default value.
-    ///
+    /**
+        The value as a `Dictionary`.
+
+        - Parameters:
+            - key: The key path.
+            - `default`: Default value if the key in the path is not found.
+
+        - Returns: The value for the key path, or the default value.
+    */
     public func asDictionary(inKeyPath keyPath:String, `default`:Dictionary<String, Any>?=nil) -> Dictionary<String, Any>?
     {
         // if key exists and value is a Dictionary<String, Any> return Dictionary<String, Any>
@@ -599,35 +593,35 @@ public final class JSONX
         {
             return v
         }
-        else {
-            return `default`
-        }
+
+        return `default`
     }
 
 
     // MARK:- Helpers
 
 
-    ///
-    /// Convert all single quotes to escaped double quotes.
-    ///
-    /// - Parameter text: A string containing single quotes.
-    /// - Returns: The string containing escaped double quotes.
-    ///
-    public class func convertSingleQuotesToDoubleQuotes(_ text:String) -> String
+    /**
+        Convert all single quotes to escaped double quotes.
+
+        - Parameter string: A string containing single quotes.
+
+        - Returns: The string containing escaped double quotes.
+    */
+    public class func convertSingleQuotesToDoubleQuotes(_ string:String) -> String
     {
-        return text.replacingOccurrences(of:"'", with:"\"")
+        return string.replacingOccurrences(of:"'", with:"\"")
     }
 
 
     // MARK:- Info
 
 
-    ///
-    /// The description of the JSONX contents.
-    ///
-    /// - Returns: String description of the JSONX contents.
-    ///
+    /**
+        A description of the `JSONX` contents.
+
+        - Returns: String description of the `JSONX` contents.
+    */
     public func description() -> String
     {
         return mJSONDictionary.description
@@ -637,7 +631,7 @@ public final class JSONX
     // MARK:- Private
 
 
-    fileprivate func searchDictionary(keyPathComponents:[String], keyPathIndex:Int, dictionary:Dictionary<String, Any>) -> Any?
+    private func searchDictionary(keyPathComponents:[String], keyPathIndex:Int, dictionary:Dictionary<String, Any>) -> Any?
     {
         let currentComponentKey:String = keyPathComponents[keyPathIndex]
         let numOfKeyPathComponentIndexes:Int = (keyPathComponents.count - 1)
@@ -680,6 +674,33 @@ public final class JSONX
         }
 
         return nil
+    }
+}
+
+
+// MARK:- Dictionary
+
+
+extension Dictionary where Key:ExpressibleByStringLiteral, Value:Any
+{
+    /**
+        Initializes a new `JSONX` object from this dictionary.
+
+        - Parameter context: In case of failure, logging will print the context in which the initialization is occuring.
+
+        - Returns: A new `JSONX` object.
+     */
+    func toJSONX(context:String) -> JSONX?
+    {
+        let selfDict = (self as Any) as! Dictionary<String, Any>
+
+        guard let jsonx = JSONX(dictionary:selfDict) else
+        {
+            print("🎭 \(context): Failed, could not convert dictionary to JSONX object!")
+            return nil
+        }
+
+        return jsonx
     }
 }
 

@@ -1,16 +1,15 @@
 //
 //  JSONX
-//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
 //
 
 //
 //  https://github.com/MKGitHub/JSONX
 //  http://www.xybernic.com
-//  http://www.khanofsweden.com
 //
 
 //
-//  Copyright 2016/2017 Mohsan Khan
+//  Copyright 2016/2017/2018 Mohsan Khan
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -28,33 +27,33 @@
 import Foundation
 
 
-func ExampleUsage()
+func runExampleUsage()
 {
-    // init with String
-    guard let jsonXFromString:JSONX = JSONX(with:"{'name':'Khan Solo'}", usesSingleQuotes:true) else { print("Failed to create JSONX object!"); return }
+    // init with a `String`
+    guard let jsonXFromString = JSONX(string:"{'name':'Khan Solo'}", usesSingleQuotes:true) else { print("Failed to create JSONX object!"); return }
     print("JSONX with String:", jsonXFromString.description(), "\n")
 
-    // init with file contents at path
-    let filePath1:String = Bundle.main.path(forResource:"example", ofType:"json")!
-    guard let jsonXFromFilepath:JSONX = JSONX(with:filePath1) else { print("Failed to create JSONX object!"); return }
+    // init with a file path
+    let filePath1 = Bundle.main.path(forResource:"example", ofType:"json")!
+    guard let jsonXFromFilepath = JSONX(filepath:filePath1) else { print("Failed to create JSONX object!"); return }
     print("JSONX with file contents at path:", jsonXFromFilepath.description(), "\n")
 
-    // init with file contents at URL
-    let filePath2:String = Bundle.main.path(forResource:"example", ofType:"json")!
-    let url:URL = URL(fileURLWithPath:filePath2)
-    guard let jsonXFromFileURL:JSONX = JSONX(with:url) else { print("Failed to create JSONX object!"); return }
+    // init with a file `URL`
+    let filePath2 = Bundle.main.path(forResource:"example", ofType:"json")!
+    let url = URL(fileURLWithPath:filePath2)
+    guard let jsonXFromFileURL = JSONX(url:url) else { print("Failed to create JSONX object!"); return }
     print("JSONX with file contents at URL:", jsonXFromFileURL.description(), "\n")
 
-    // init with Data
+    // init with `Data`
     let data:Data? = JSONX.convertSingleQuotesToDoubleQuotes("{'name':'Khan Solo'}").data(using:String.Encoding.utf8)
-    guard let jsonXFromData:JSONX = JSONX(with:data!) else { print("Failed to create JSONX object!"); return }
+    guard let jsonXFromData = JSONX(data:data!) else { print("Failed to create JSONX object!"); return }
     print("JSONX with Data:", jsonXFromData.description(), "\n")
 
-    // init with Dictionary<String, Any>
-    guard let jsonXFromDictionary:JSONX = JSONX(with:["name":"Khan Solo", "level":50, "skills":[1,2,3], "droids":["shiny":9]]) else { print("Failed to create JSONX object!"); return }
+    // init with a `Dictionary`
+    guard let jsonXFromDictionary = JSONX(dictionary:["name":"Khan Solo", "level":50, "skills":[1,2,3], "droids":["shiny":9]]) else { print("Failed to create JSONX object!"); return }
     print("JSONX with Dictionary<String, Any>:", jsonXFromDictionary.description())
 }
 
 
-ExampleUsage()
+runExampleUsage()
 
